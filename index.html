@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>画像→MP4ジェネレータ</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="簡単に画像をMP4に変換する #画像→MP4ジェネレータ (via bee22be) ">
+<meta name="author" content="べべ (@bee22be)">
+<meta property="og:title" content="画像→MP4ジェネレータ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bee22be.github.io/calendar-maker/">
+<meta property="og:image" content="https://bee22be.github.io/calendar-maker/img/ogp.png">
+<meta property="og:site_name" content="画像→MP4ジェネレータ">
+<meta property="og:description" content="簡単に画像をMP4に変換する #画像→MP4ジェネレータ (via bee22be) ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@bee22be">
+<meta name="twitter:creator" content="@bee22be">
+<meta name="twitter:title" content="画像→MP4ジェネレータ">
+<meta name="twitter:description" content="簡単に画像をMP4に変換する #画像→MP4ジェネレータ (via bee22be) ">
+<meta name="twitter:image:src" content="https://bee22be.github.io/calendar-maker/img/ogp.png">
+<link rel="shortcut icon" href="./assets/icon-6_mEv8Nn.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="./assets/icon-6_mEv8Nn.png">
+<!-- <link rel="apple-touch-icon" href="img/icon.png">
+<link rel="shortcut icon" href="img/icon.png"> -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/main-B_qvHhVs.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-CuOWkcHx.css">
+</head>
+<body>
+<header id="header">
+  <h1>画像→MP4ジェネレータ</h1>
+  <button type="button">他の便利なツールを開く</button>
+</header>
+<main>
+<div class="controls">
+  <h2><label for="fileUpload">画像の追加</label></h2>
+  <div class="field">
+    <input type="file" id="imageInput" accept="image/png,image/jpeg">
+  </div>
+  <div class="save">
+    <button id="export" class="start__dl button__dl">MP4出力</button>
+    <p id="status"></p>
+  </div>
+</div>
+
+<div id="generate">
+  <div id="preview">
+    <canvas id="canvas"></canvas>
+  </div>
+</div>
+
+</main>
+
+<aside class="anothertools">
+  <h2>他の便利なツール</h2>
+  <ul class="field">
+    <li><a href="https://bee22be.github.io/calendar-maker/" target="_blank">スマホ待ち受けカレンダーメーカー<span>簡単にスマホ用のカレンダーを作成</span></a></li>
+    <li><a href="https://bee22be.github.io/neon-digital-clock/" target="_blank">Neon Digital Clock<span>配信画面にきれいな時計を表示</span></a></li>
+    <li><a href="https://bee22be.github.io/ose-generator/" target="_blank">推せ絶対ジェネレータ<span>控えめに推して欲しい・推したい時に使える</span></a></li>
+    <li><a href="https://bee22be.github.io/EasyNewsMaker/" target="_blank">簡単News画像メーカー<span>ニュースのダミー画像を簡単に作れる</span></a></li>
+    <li><a href="https://bee22be.github.io/omikuji-generator/" target="_blank">推しおみくじジェネレータ<span>控えめに推して欲しい・推したいおみくじを簡単に作れる</span></a></li>
+  </ul>
+  <h2>その他配信素材(Youtube)</h2>
+  <ul class="field">
+    <li><a href="https://www.youtube.com/watch?v=ocASWfjEXeU" target="_blank">【OBS】生放送で雪を降らせられるツール☃️クリスマスや年末年始に！❄️</a></li>
+  </ul>
+  <footer>
+    <small>Powered by <a href="https://x.com/bee22be" target="_blank">@bee22be</a></small>
+    <small>© <a href="https://twitter.com/bee22be" target="_blank">上那べべ</a> （<a href="https://www.youtube.com/user/bebesGamesRoom?sub_confirmation=1" target="_blank">べべのゲーム部屋</a>）</small>
+  </footer>
+  <button type="button" class="dialog__close closeAnothertoolsButton">他の便利なツールを閉じる</button>
+</aside>
+
+<dialog class="download" closedby="any">
+  <div class="contents">
+    <header>
+      <h2>画像のダウンロードと共有・注意</h2>
+    </header>
+    <ul>
+      <li><strong>このツールを利用するには制作者のアカウント(<a href="https://x.com/bee22be" target="_blank">@bee22be</a>)のフォローが必要です</strong></li>
+      <li>カレンダー部分の生成画像のみを用いるのも同様の条件です</li>
+      <li>Xのアカウントをお持ちでない方は、使用する場所で「powered by 上那べべ（https://x.com/bee22be）」の記載必須です</li>
+    </ul>
+    <p>フォント追加などの要望も基本的にはXで受け付けています。また不定期でフォロワーの方向けに配信素材やツールをプレゼント予定しています</p>
+    <small>※生成した画像をダウンロード、使用した時点で上記の注意点を承諾したものとします。</small>
+    <footer>
+      <button id="downloadBtn" class="button__dl">ダウンロード</button>
+      <div class="tweetBtnWp"><a href="https://twitter.com/intent/tweet?text=%E3%82%B9%E3%83%9E%E3%83%9B%E7%94%A8%E3%81%AE%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%E3%82%92%E7%B0%A1%E5%8D%98%E3%81%AB%E4%BD%9C%E3%82%8C%E3%82%8B+%23%E3%82%B9%E3%83%9E%E3%83%9B%E5%BE%85%E3%81%A1%E5%8F%97%E3%81%91%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC+%28via+bee22be%29+%0D%0Ahttps%3A%2F%2Fbee22be.github.io%2Fcalendar-maker%2F" class="button ika" target="_blank">Twitter<span>でつぶやく</span></a></div>
+    </footer>
+    <button type="button" class="dialog__close">ダイアログを閉じる</button>
+  </div>
+</dialog>
+
+<nav class="smart">
+  <ul>
+    <li class="smart__setting on">設定</li>
+    <li class="smart__preview">プレビュー</li>
+  </ul>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/mp4-muxer@5.2.2/build/mp4-muxer.min.js"></script>
+</body>
+</html>
